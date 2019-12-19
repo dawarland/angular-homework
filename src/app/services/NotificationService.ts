@@ -67,7 +67,7 @@ export class NotificationService {
         Notification.requestPermission(function (permission) {
           // Quelque soit la réponse de l'utilisateur, nous nous assurons de stocker cette information
           if(!('permission' in Notification)) {
-            Notification.permission = permission;
+            //Notification.permission = permission;
           }
     
           // Si l'utilisateur est OK, on crée une notification

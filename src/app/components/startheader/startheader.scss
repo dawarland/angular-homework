@@ -1,0 +1,40 @@
+img{
+    max-width: 75px;
+    max-height: 75px;
+}
+.red{
+    background-color: red;
+    height:1em;
+  }
+  .App-logo {
+    -webkit-animation-delay: 10s;
+    animation-delay: 10s;
+    animation: App-logo-in 10s alternate ;
+    height: 3em;
+    pointer-events: none;
+  }
+  
+  .white{
+    background-color: whitesmoke;
+    height:1em;
+  }
+  
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    border: 1px solid grey;
+    margin-bottom: 1em;
+  }
+  
+  
+  @keyframes App-logo-in {
+    from {
+      height: 0em;
+    }
+    to {
+      height: 3em;
+    }
+  }

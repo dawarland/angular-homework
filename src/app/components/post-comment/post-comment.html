@@ -1,0 +1,62 @@
+<div>
+    <div class="header">
+        <div class="user-picture">
+                <user-profile-picture [src]="comment.user.pictureUrl"></user-profile-picture>
+        </div>
+        <div class="username">
+                <p>Commentaire de : {{comment.user.username}}</p>
+                <div class="date">
+                  <p>Fait le {{comment.creationTime | date: 'dd/MM/yy à HH:mm:ss' }}</p>
+                </div>
+        </div>
+    </div>
+    <div class="message right">
+            <div *ngIf="comment.message">
+                <p>{{comment.message}}</p>
+                <div *ngFor="let c of comment.content">
+                        <picture-post-content [postContent]="c" *ngIf="c.type == 'picture'"></picture-post-content>
+                        <video-post-content [postContent]="c" *ngIf="c.type == 'video'"></video-post-content>
+                        <youtube-post-content [postContent]="c" *ngIf="c.type == 'youtube'"></youtube-post-content>
+                         <!-- afficher les bons composants picture-post-content, youtube-post-content ou video-post-content en fonction du type de contenu -->
+                </div>
+            </div>
+    </div>
+</div>
+<style>
+    .user-picture {
+        width: 60px;
+        height: 60px;
+        border-radius: 25px;
+    }
+
+    user-profile-picture {
+        height: 60px;
+        width: 60px;
+    }
+
+    .header {
+        padding: 10px 10px 0 10px;
+        display: flex;
+    }
+
+    .username {
+        padding: 0 13px;
+        flex: 1;
+        font-size: 12px;
+    }
+
+    .date {
+        font-size: 10px;
+    }
+
+    .message {
+        padding: 10px;
+    }
+
+    .right {
+        display: flex;
+        /*align-items: center;*/
+        justify-content: flex-end;
+    }
+
+</style>

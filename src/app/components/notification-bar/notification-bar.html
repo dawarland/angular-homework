@@ -1,0 +1,18 @@
+<ul *ngFor="let notif of notifications">
+    <a *ngIf="notif.url != '#' " [routerLink]="notif.url">👁</a>
+    <li>{{notif.text}}</li>
+</ul>
+
+<style>
+    :host {
+        display: block;
+        height: 100%;
+        width: 150px;
+        background: white;
+        flex-shrink: 0;
+        border-left: 1px solid #d6d6d6;
+    }
+    ul{
+        list-style: inside none;
+    }
+</style>

@@ -1,0 +1,43 @@
+<nav>
+  <div class="user-picture">
+    <img src={{profilImg}} alt="img">
+
+  </div>
+  <a (click)="logout()" style="background-color: rgba(255, 0, 20, 0.5);">Logout</a>
+  <add-channel></add-channel>
+  <div>
+      <a *ngFor="let channel of channels" [routerLink]="channel.id">{{channel.name}}</a>
+  </div>
+  
+</nav>
+
+<style >
+  :host {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  add-channel {
+    border-bottom: 1px solid #eee;
+
+  }
+
+
+  a {
+    display: block;
+    padding: 8px 16px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .user-picture {
+    text-align: center;
+    margin: 1em;
+  }
+  img {
+    border-radius: 1em;
+    height: 75px;
+    width: 75px;
+  }
+
+</style>

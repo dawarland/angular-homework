@@ -33,7 +33,7 @@ export class RegisterComponent {
         this.registrationService.usernameExists(this.model.username)
         .then((exist) => {
             if(exist){
-                this.messageService.create('info','This username are already use!');
+                this.messageService.create('error','This username are already use!');
                 return;
             }else{
                 this.registrationService.register(this.model);
